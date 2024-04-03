@@ -14,7 +14,7 @@
             return $totalcom;
         }
 
-        $order = DB::table('orders')->selectRaw('*, SUM(quantity * price) as sum, SUM(quantity * price * discount * 0.01) as dis')->groupBy('orderid')->groupBy('category')->get();
+        $order = DB::table('orders')->where('userid', $user->id)->selectRaw('*, SUM(quantity * price) as sum, SUM(quantity * price * discount * 0.01) as dis')->groupBy('orderid')->groupBy('category')->get();
             $category = explode(",", $user->category); 
             $commission = explode(",", $user->commission);
             $totalcom = 0;
