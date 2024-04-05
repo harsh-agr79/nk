@@ -46,7 +46,7 @@
                         <td><span onclick="$('#{{$item->orderid}}2').materialbox('open');" class="btn grey darken-2">img</span></td>
                         <span class="mbox"><img class="materialboxed" id="{{$item->orderid}}2" height="0.0000000000001px" src="{{asset('voucher/'.$item->voucher)}}" alt="">
                         </span>
-                        <td>{{$item->sum-(int)$item->cash_discount}}</td>
+                        <td>{{$item->sum-(float)$item->cash_discount}}</td>
                         <td>{{getcom($item->orderid,$user)}}</td>
                     </tr>
                 @endforeach

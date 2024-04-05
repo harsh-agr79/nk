@@ -257,10 +257,10 @@
         {
             var total = 0;
                $('input.total').each(function(){
-               total = total + parseInt($(this).val());
+               total = total + parseFloat($(this).val());
            })
-           var dis = parseInt($('#discount').val());
-           var dis2 = parseInt($('#cash_discount').val());
+           var dis = parseFloat($('#discount').val());
+           var dis2 = parseFloat($('#cash_discount').val());
         //    console.log(dis)
            var tot = total - total*dis*0.01-dis2;
            $('#total').text(total);
