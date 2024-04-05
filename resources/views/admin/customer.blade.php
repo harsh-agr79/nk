@@ -30,6 +30,9 @@
                     <input type="text" name="username" placeholder="username" required>
                   </div>
                   <div class="col s12 m6">
+                    <input type="text" name="unique_code" placeholder="unique_code" required>
+                  </div>
+                  <div class="col s12 m6">
                     <input type="text" name="phone" placeholder="Phone Number" required>
                   </div>
                   <div class="col s12 m6">
@@ -84,6 +87,7 @@
                     <tr>
                         <td>Name</td>
                         <td>Username</td>
+                        <td>Unique Code</td>
                         <td>Phone</td>
                         <td>Type</td>
                         <td>Address</td>
@@ -111,6 +115,9 @@
                   </div>
                   <div class="col s12 m6">
                     <input type="text" name="username" id="editusername" placeholder="username" required>
+                  </div>
+                  <div class="col s12 m6">
+                    <input type="text" name="unique_code" id="editunique_code" placeholder="Unique Code" required>
                   </div>
                   <div class="col s12 m6">
                     <input type="text" name="phone" id="editphone" placeholder="Phone Number" required>

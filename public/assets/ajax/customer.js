@@ -35,6 +35,7 @@ $(document).ready(function(){
                         '<tr>\
                             <td>'+item.name+'</td>\
                             <td>'+item.username+'</td>\
+                            <td>'+item.unique_code+'</td>\
                             <td>'+item.phone+'</td>\
                             <td>'+item.type+'</td>\
                             <td>'+item.address+'</td>\
@@ -59,6 +60,7 @@ $(document).ready(function(){
                     // console.log(response)
                     $('#editname').val(response.customer.name);
                     $('#editusername').val(response.customer.username);
+                    $('#editunique_code').val(response.customer.unique_code);
                     $('#editpw').val(response.customer.password);
                     $('#editid').val(response.customer.id);
                     $('#edittype').val(response.customer.type);
@@ -187,6 +189,10 @@ $(document).ready(function(){
             var emerr = response.responseJSON.errors.phone;  
             M.toast({html: emerr})
           }
+          if(response.responseJSON.errors.unique_code){
+            var emerr = response.responseJSON.errors.unique_code;  
+            M.toast({html: emerr})
+          }
         }
     })
   });
@@ -208,6 +214,10 @@ $(document).ready(function(){
           }
           if(response.responseJSON.errors.phone){
             var emerr = response.responseJSON.errors.phone;  
+            M.toast({html: emerr, classes: 'red'})
+          }
+          if(response.responseJSON.errors.unique_code){
+            var emerr = response.responseJSON.errors.unique_code;  
             M.toast({html: emerr, classes: 'red'})
           }
         }

@@ -23,10 +23,12 @@ class CustomerController extends Controller
     
         $request->validate([
             'username'=>'required|unique:customers,username|unique:admins,username,',
+            'unique_code'=>'required|unique:customers,unique_code,',
             'phone'=>'required|unique:customers,phone,',
         ]);
         $name=$request->post('name');
         $username=$request->post('username');
+        $unique_code=$request->post('unique_code');
         $password=$request->post('password');
         $type=$request->post('type');
         $code=$request->post('code');
@@ -48,6 +50,7 @@ class CustomerController extends Controller
         Customer::insert([
             'name'=>$name,
             'username'=>$username,
+            'unique_code'=>$unique_code,
             'password'=>$password,
             'type'=>$type,
             'code'=>$code,
@@ -86,11 +89,13 @@ class CustomerController extends Controller
     public function updatecust(Request $request){
         $id = $request->post('id');
         $request->validate([
-            'username'=>'required|unique:customers,username,'.$id,
+            'username'=>'required|unique:admins,username|unique:customers,username,'.$id,
+            'unique_code'=>'required|unique:customers,unique_code,'.$id,
             'phone'=>'required|unique:customers,phone,'.$id,
         ]);
         $name=$request->post('name');
         $username=$request->post('username');
+        $unique_code=$request->post('unique_code');
         $password=$request->post('password');
         $type=$request->post('type');
         $code=$request->post('code');
@@ -113,6 +118,7 @@ class CustomerController extends Controller
         Customer::where('id', $id)->update([
             'name'=>$name,
             'username'=>$username,
+            'unique_code'=>$unique_code,
             'password'=>$password,
             'type'=>$type,
             'code'=>$code,
