@@ -153,7 +153,7 @@
                       <span>Discount</span>
                     </div>
                     <div class="inpbor input-field col s2">
-                      <input type="number" onkeyup="calc()" value="{{$order[0]->cash_discount}}" class="browser-default" name="cash_discount" id="cash_discount" placeholder="Cash Discount(Rs.)" >
+                      <input type="number" onkeyup="calc()" value="{{$order[0]->cash_discount}}" max="100" min="0" step="0.01" class="browser-default" name="cash_discount" id="cash_discount" placeholder="Cash Discount(Rs.)" >
                     </div>
               </div>
                 <div class="ivrow row col s12" style="margin-top: -48px;">

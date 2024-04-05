@@ -127,7 +127,7 @@
                         <span class="right">Discount</span>
                       </div>
                       <div class="inpbor input-field col s2">
-                        <input type="number" onkeyup="calc()" value="0" class="browser-default" name="discount" id="discount" placeholder="Discount(%)" >
+                        <input type="number" onkeyup="calc()" value="0" max="100" min="0" step="0.01" class="browser-default" name="discount" id="discount" placeholder="Discount(%)" >
                       </div>
                 </div>
                 <div class="ivrow row col s12" style="margin-top: -48px;">
